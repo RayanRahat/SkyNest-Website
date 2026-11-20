@@ -6,6 +6,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/style.css">
+        <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
         <title>SkyNest | Home</title>
     </head>
 
@@ -14,7 +15,12 @@
     <header>
             <h1>Sky<span class="logo-accent">Nest</span></h1>
 
-        <nav>
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="main-nav">
             <a href="index.html" class="active">Home</a>
             <a href="packages.html">Packages</a>
             <a href="facilities.html">Facilities</a>
@@ -26,54 +32,101 @@
 <section class="hero">
 
 <div class="hero-content">
-    <h2>Modern Co-Living for a Flexible Lifestyle</h2>
-    <p>Flexible accommodation in Singapore for students, professionals and digital nomads.</p>
+
+    <p class="hero-label">CO-LIVING SPACES IN SINGAPORE</p>
+<h2>
+    Modern Co-Living<br>
+    for a <span class="gradient-text">Flexible Lifestyle</span>
+</h2>
+
+<p>Flexible accommodation in Singapore for students, professionals and digital nomads.</p>
     <a href="packages.html" class="hero-button">Explore Packages</a>
 </div>
 
 <div class="hero-image">
-    <p>Accommodation Image Placeholder</p>
+    <div class="slider">
+        <img src="images/premium.jpg" alt="Modern private studio accommodation" class="slide active">
+        <img src="images/standard.jpg" alt="Comfortable furnished accommodation" class="slide">
+        <img src="images/short-term.jpg" alt="Short-term furnished room" class="slide">
+
+        <button class="slider-prev" type="button" aria-label="Previous image">&#10094;</button>
+        <button class="slider-next" type="button" aria-label="Next image">&#10095;</button>
+    </div>
+
+    <div class="slider-dots">
+        <button class="dot active" type="button" aria-label="Show image 1"></button>
+        <button class="dot" type="button" aria-label="Show image 2"></button>
+        <button class="dot" type="button" aria-label="Show image 3"></button>
+    </div>
 </div>
 
 </section>
 
 <section class="facilities-bar">
-    <span>Furnished Rooms</span>
-    <span>Co-Working Spaces</span>
-    <span>Gym Facilities</span>
-    <span>High-Speed Wi-Fi</span>
-    <span>Community Events</span>
+    <span><i data-lucide="bed-double"></i> Furnished Rooms</span>
+    <span><i data-lucide="laptop"></i> Co-Working Spaces</span>
+    <span><i data-lucide="dumbbell"></i> Gym Facilities</span>
+    <span><i data-lucide="wifi"></i> High-Speed Wi-Fi</span>
+    <span><i data-lucide="users"></i> Community Events</span>
 </section>
 
 <section class="accommodation">
     <h2>Choose Your Stay</h2>
     <p>Flexible, comfortable and fully equipped living options.</p>
 
-    <div class="package-cards">
+<div class="package-cards">
 
-        <div class="package-card">
-            <h3>Premium Stay</h3>
-            <p>Spacious rooms with enhanced comforts and added amenities.</p>
-            <a href="packages.html">View Details</a>
-        </div>
+    <div class="package-card premium">
+        <img src="images/premium.jpg" alt="Premium Stay accommodation">
 
-        <div class="package-card">
-            <h3>Standard Stay</h3>
-            <p>A comfortable option with essential facilities.</p>
-            <a href="packages.html">View Details</a>
-        </div>
+        <h3>Premium Stay</h3>
+        <p>Spacious rooms with enhanced comforts and added amenities.</p>
 
-        <div class="package-card">
-            <h3>Short-Term Stay</h3>
-            <p>Flexible accommodation for shorter stays.</p>
-            <a href="packages.html">View Details</a>
-        </div>
+        <a href="packages.html" class="card-arrow" aria-label="View Premium Stay details">
+           &rarr; 
+        </a>
+    </div>
+
+    <div class="package-card standard">
+        <img src="images/standard.jpg" alt="Standard Stay accommodation">
+
+        <h3>Standard Stay</h3>
+        <p>A comfortable option with essential facilities.</p>
+
+        <a href="packages.html" class="card-arrow" aria-label="View Standard Stay details">
+            &rarr;
+        </a>
+    </div>
+
+    <div class="package-card short-term">
+        <img src="images/short-term.jpg" alt="Short-Term Stay accommodation">
+
+        <h3>Short-Term Stay</h3>
+        <p>Flexible accommodation for shorter stays.</p>
+
+        <a href="packages.html" class="card-arrow" aria-label="View Short-Term Stay details">
+            &rarr;
+        </a>
+    </div>
+
+</div>
 
     </div>
 </section>
 
 <footer>
-    <p>&copy; 2026 SkyNest Co-Living Spaces. All rights reserved.</p>
+    <h1>Sky<span class="logo-accent">Nest</span></h1>
+    <div class="footer-content">
+        <p>&copy;  2026 SkyNest Co-Living Spaces. All rights reserved.</p>
+
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="packages.html">Packages</a>
+            <a href="facilities.html">Facilities</a>
+            <a href="help.html">Help</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
 </footer>
 
 <script src="js/script.js"></script>
