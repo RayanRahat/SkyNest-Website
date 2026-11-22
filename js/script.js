@@ -59,9 +59,29 @@ if (contactForm) {
     contactForm.addEventListener("submit", function(event) {
         event.preventDefault();
 
-        formMessage.textContent = "Thank you! Your enquiry has been recorded!.";
-        formMessage.style.color = "#247A48";
+        formMessage.textContent = "Thank you! Your enquiry has been recorded for this demonstration.";
+        formMessage.style.display = "block";
 
         contactForm.reset();
+    });
+}
+
+// Back to Top Button
+const backToTop = document.querySelector("#back-to-top");
+
+if (backToTop) {
+    window.addEventListener("scroll", function() {
+        if (window.scrollY > 300) {
+            backToTop.style.display = "block";
+        } else {
+            backToTop.style.display = "none";
+        }
+    });
+
+    backToTop.addEventListener("click", function() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
     });
 }
