@@ -33,30 +33,35 @@ function showSlide(number) {
     dots[currentSlide].classList.add("active");
 }
 
-document.querySelector(".slider-next").onclick = function () {
-    showSlide(currentSlide + 1);
-};
+if (slides.length > 0) {
+    document.querySelector(".slider-next").onclick = () => showSlide(currentSlide + 1);
+    document.querySelector(".slider-prev").onclick = () => showSlide(currentSlide - 1);
 
-document.querySelector(".slider-prev").onclick = function () {
-    showSlide(currentSlide - 1);
-};
+    dots.forEach((dot, index) => {
+        dot.onclick = () => showSlide(index);
+    });
 
-dots.forEach(function (dot, index) {
-    dot.onclick = function () {
-        showSlide(index);
-    };
-});
-
-setInterval(function () {
-    showSlide(currentSlide + 1);
-}, 5000);
+    setInterval(() => showSlide(currentSlide + 1), 5000);
+}
 
 // Load facility icons
-if (window.lucide) {
-    lucide.createIcons();
-}
 document.addEventListener("DOMContentLoaded", function () {
     if (window.lucide) {
         lucide.createIcons();
     }
 });
+
+// Contact form submission
+const contactForm = document.querySelector("#contact-form");
+const formMessage = document.querySelector("#form-message");
+
+if (contactForm) {
+    contactForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        formMessage.textContent = "Thank you! Your enquiry has been recorded!.";
+        formMessage.style.color = "#247A48";
+
+        contactForm.reset();
+    });
+}
